@@ -1,172 +1,196 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SARRA777 Matka</title>
-
+    <title>Trade With Purab</title>
     <style>
-        :root {
-            --primary: #1e3c72;
-            --primary-dark: #2a5298;
-            --telegram: #0088cc;
-            --telegram-dark: #006699;
-            --bg-light: #f4f7f6;
-            --text-dark: #2b2b2b;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg-light);
-            color: var(--text-dark);
+            background-color: #050505;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            padding: 30px 15px 70px;
-            color: #fff;
-            border-bottom-left-radius: 22px;
-            border-bottom-right-radius: 22px;
-            text-align: center;
-        }
-
-        .brandIcon {
-            width: 70px;
-            height: 70px;
-            border-radius: 18px;
-            margin-bottom: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
-        }
-
-        .channel_name {
-            font-size: 22px;
-            font-weight: 800;
-            margin: 5px 0 0;
-        }
-
-        .subs_count {
-            margin: 5px 0 0;
-            font-size: 14px;
-            opacity: .9;
-        }
-
-        .desc {
-            margin-top: 14px;
-            line-height: 26px;
-            font-size: 16px;
-        }
-
-        .download_wrap {
-            margin-top: -40px;
+        .container {
+            width: 100%;
+            max-width: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            text-align: center;
         }
 
-        .telegram_btn {
-            background: var(--telegram);
-            padding: 18px 40px;
+        /* Logo Styling */
+        .logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            object-fit: cover;
+        }
+
+        /* Main Headline */
+        .title {
             font-size: 20px;
             font-weight: 800;
-            text-decoration: none;
-            color: #fff;
-            border-radius: 16px;
-            box-shadow: 0 10px 0 var(--telegram-dark), 0 20px 35px rgba(0, 136, 204, 0.35);
-            transition: .15s ease-in-out;
-            text-align: center;
-            width: 280px;
-            white-space: nowrap;
-            display: inline-block;
-            box-sizing: border-box;
+            color: #ffcc00;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
 
-        .telegram_btn:active {
-            transform: translateY(6px);
-            box-shadow: 0 4px 0 var(--telegram-dark);
-        }
-
-        .feature_section {
-            background: #fff;
-            margin: 40px 15px 20px;
-            padding: 20px;
-            border-radius: 18px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature_section .title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .feature_section ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .feature_section ul li {
+        /* Subtitle */
+        .subtitle-main {
             font-size: 16px;
-            padding: 10px 0;
-            border-bottom: 1px solid #f0f0f0;
+            color: #7a829e;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
 
-        .feature_section ul li:last-child {
-            border-bottom: none;
+        .subtitle-categories {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Call to Action Button */
+        .btn-telegram {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(180deg, #1d9df2 0%, #0076e3 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 150, 255, 0.4);
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-telegram:active {
+            transform: scale(0.98);
+        }
+
+        /* Trust Badge */
+        .trust-badge {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffffff;
+            color: #900000;
+            font-weight: 800;
+            font-size: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 35px;
+        }
+
+        .features-list li {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list li.risk-warning {
+            color: #e0e0e0;
+            font-size: 13.5px;
+        }
+
+        /* Footer Ad Banner */
+        .ad-banner {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #4d38f5 0%, #a824cb 50%, #f5317f 100%);
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(235, 50, 150, 0.5);
+        }
+
+        .ad-banner span {
+            color: #79f0ff;
         }
     </style>
-
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1024200693860495');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1024200693860495&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 </head>
-
 <body>
 
-    <header>
-        <img class="brandIcon" src="https://i.ibb.co/YBT5bz9w/g-WKDpo-TRfrt-Oo7g-Uqq-Bx-GTu-Dyht8-IYiv-Pztgbh-An-RZy-NMq56hmz-BOr-Dv4-MH-MAOk2-H9w-VNe-Lfl-Rpp-Adr-OQ.jpg" alt="Logo">
+    <div class="container">
+        <!-- Logo (Apni image URL se badlein) -->
+        <img src="https://i.ibb.co/8nzphk4R/qj-RSDZd8zoi59-Pf-VUUe-Pa-ERsks-O-Iirr-MVmnmw97-RQz6-VPNgrv-Ahl-Pf-VNI-4h-Jmm-A-kuw-Nl19wb-Bz-Crbs-Bw-K.jpg" alt="GUJRATI TRADER" class="logo">
 
-        <p class="channel_name">KALYAM SATTA KING</p>
-        <p class="subs_count">236k Members</p>
+        <!-- Header Text -->
+        <h1 class="title">🔥 DAILY FREE DEMO CALL 🔥</h1>
+        <div class="subtitle-main">Trade With Purab™</div>
+        <div class="subtitle-categories">NIFTY ▪ BANKNIFTY ▪ STOCK OPTIONS</div>
 
-        <p class="desc">🚨 भारत का सबसे भरोसेमंद चैनल<br>नीचे दिए गए बटन पर क्लिक करके जॉइन करें 💸</p>
-    </header>
+        <!-- Telegram Button -->
+        <a href="https://t.me/+G2W6mxUddD4zYjVl" class="btn-telegram">
+            🚀 Join Free on Telegram
+        </a>
 
-    <div class="download_wrap">
-        <!-- Telegram Join Button (Pixel Tracking Active) -->
-        <a class="telegram_btn" href="https://t.me/+Ry6qp0ELQpk5MWI1" target="_blank" onclick="fbq('track', 'Contact');">Join On Telegram</a>
-    </div>
+        <!-- Trust Badge -->
+        <div class="trust-badge">
+            🇮🇳 India’s Trusted Stock Market Channel
+        </div>
 
-    <div class="feature_section">
-        <p class="title">Features :</p>
-        <ul>
-            <li>📊 आज ही जॉइन करे और जीतो लाखों रुपए</li>
-            <li>🔥 24 घंटे अपडेट्स</li>
-            <li>💯 100% भरोसेमंद सेवा</li>
-            <li>💡 24×7 कस्टमर सपोर्ट</li>
+        <!-- Features List -->
+        <ul class="features-list">
+            <li>✔ Proper Stop Loss & Targets</li>
+            <li>✔ 5–7 Daily Calls by Expert</li>
+            <li>✔ F&O Views for Study Purpose Only</li>
+            <li class="risk-warning">⚠️ Market investments are subject to risk</li>
         </ul>
+
+        <!-- Bottom Ad Footer -->
+        <div class="ad-banner">
+            🔥 Ads by <span>ADSAGENCY</span> • Instant Growth 🚀
+        </div>
     </div>
-
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1780764782961960');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1780764782961960&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </body>
-
 </html>
