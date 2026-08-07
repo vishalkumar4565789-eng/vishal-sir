@@ -1,443 +1,200 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gujrati Trader - Stock Market Channel</title>
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Apply Now & Get Money</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #0b0f19;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* Ticker Top Bar */
-        .top-bar {
-            background-color: #05080f;
-            padding: 8px 15px;
+            background-color: #6C5CE7;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            border-bottom: 1px solid #1a2332;
-        }
-
-        .ticker {
-            display: flex;
-            gap: 15px;
-        }
-
-        .ticker span {
-            color: #00e676;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 20px;
-            background-color: #0d1322;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-img {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            border: 2px solid #00e676;
-            object-fit: cover;
-            background-color: #fff;
-        }
-
-        .logo-text {
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .btn-top {
-            background-color: #00e676;
-            color: #000;
-            padding: 6px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 30px 20px;
-            background: radial-gradient(circle at center, #132d2f 0%, #0b0f19 70%);
-        }
-
-        .profile-badge {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            border: 4px solid #00e676;
-            background-color: #ffffff;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 4px;
-            box-shadow: 0 0 25px rgba(0, 230, 118, 0.3);
-            overflow: hidden;
-        }
-
-        .profile-badge img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .tagline-pill {
-            display: inline-block;
-            background: rgba(0, 230, 118, 0.1);
-            border: 1px solid #00e676;
-            color: #00e676;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .hero h1 span {
-            color: #00e676;
-        }
-
-        .hero h2 {
-            color: #00e676;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            color: #a0aec0;
-            font-size: 14px;
-            max-width: 400px;
-            margin: 0 auto 20px;
-        }
-
-        /* Buttons */
-        .btn-telegram {
-            display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: #00e676;
-            color: #000;
-            text-decoration: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 18px;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
-            width: 100%;
-        }
-
-        .container {
-            padding: 0 20px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .stat-card {
-            background-color: #131b2e;
+            min-height: 100vh;
             padding: 20px 15px;
-            border-radius: 16px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 35px;
+            padding: 35px 25px;
+            max-width: 400px;
+            width: 100%;
             text-align: center;
-            border: 1px solid #1e293b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .stat-card h3 {
-            color: #00e676;
-            font-size: 26px;
-            margin-bottom: 5px;
+        .logo-circle {
+            width: 70px;
+            height: 70px;
+            background-color: #E8E5FC;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
         }
 
-        .stat-card p {
-            color: #94a3b8;
-            font-size: 13px;
-        }
-
-        /* Feature Cards */
-        .feature-card {
-            background-color: #131b2e;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border: 1px solid #1e293b;
-        }
-
-        .feature-icon {
+        .logo-inner {
             width: 50px;
             height: 50px;
+            background-color: #6C5CE7;
             border-radius: 12px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 24px;
-            margin-bottom: 15px;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
         }
 
-        .icon-green { background-color: #00e676; color: #000; }
-        .icon-blue { background-color: #3b82f6; color: #fff; }
-        .icon-red { background-color: #ef4444; color: #fff; }
-        .icon-purple { background-color: #a855f7; color: #fff; }
-
-        .feature-card h3 {
-            font-size: 18px;
+        h1 {
+            font-size: 24px;
+            color: #1A1A1A;
+            font-weight: 800;
             margin-bottom: 8px;
         }
 
-        .feature-card p {
-            color: #94a3b8;
-            font-size: 13px;
+        .subtitle {
+            color: #8C8C8C;
+            font-size: 14px;
+            margin-bottom: 30px;
         }
 
-        /* Testimonials */
-        .testimonials {
-            text-align: center;
-            margin: 40px 0;
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+            text-align: left;
         }
 
-        .section-title-sub {
-            color: #00e676;
-            font-size: 12px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
         }
 
-        .section-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-card {
-            background-color: #131b2e;
-            border-radius: 16px;
-            padding: 25px 20px;
-            border: 1px solid #1e293b;
-        }
-
-        .stars {
-            color: #eab308;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: #cbd5e1;
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
-
-        .author-name {
+        .step-number {
+            width: 35px;
+            height: 35px;
+            background-color: #E8E5FC;
+            color: #6C5CE7;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-weight: bold;
             font-size: 15px;
+            flex-shrink: 0;
         }
 
-        .author-location {
-            color: #00e676;
-            font-size: 12px;
-        }
-
-        /* Fixed Bottom Bar */
-        .fixed-bottom {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #0b0f19;
-            padding: 10px 20px;
-            border-top: 1px solid #1e293b;
-            z-index: 999;
-        }
-
-        .fixed-bottom .btn-telegram {
-            margin: 0;
-            padding: 12px;
+        .step-content h3 {
             font-size: 16px;
+            color: #1A1A1A;
+            margin-bottom: 3px;
         }
 
-        .disclaimer {
-            text-align: center;
+        .step-content p {
+            font-size: 12px;
+            color: #8C8C8C;
+            line-height: 1.4;
+        }
+
+        .btn-download {
+            display: block;
+            width: 100%;
+            background-color: #6C5CE7;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 8px 15px rgba(108, 92, 231, 0.3);
+            margin-bottom: 15px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: #5b4cc4;
+        }
+
+        .footer-text {
             font-size: 11px;
-            color: #64748b;
-            margin: 20px 0 80px 0;
+            color: #A0A0A0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .security-info {
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="ticker">
-            <div>SENSEX ▲ <span>81,200</span></div>
-            <div>RELIANCE ▲ <span>2,985</span></div>
-        </div>
-    </div>
-
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <img src="https://i.ibb.co/xPNBX56/qj-RSDZd8zoi59-Pf-VUUe-Pa-ERsks-O-Iirr-MVmnmw97-RQz6-VPNgrv-Ahl-Pf-VNI-4h-Jmm-A-kuw-Nl19wb-Bz-Crbs-Bw-K.jpg" alt="Gujrati Trader" class="logo-img">
-            <div class="logo-text">Gujrati Trader</div>
-        </div>
-        <a href="https://t.me/+G2W6mxUddD4zYjVl" class="btn-top">Join Now</a>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="profile-badge">
-            <img src="https://i.ibb.co/xPNBX56/qj-RSDZd8zoi59-Pf-VUUe-Pa-ERsks-O-Iirr-MVmnmw97-RQz6-VPNgrv-Ahl-Pf-VNI-4h-Jmm-A-kuw-Nl19wb-Bz-Crbs-Bw-K.jpg" alt="Gujrati Trader Logo">
-        </div>
-        
-        <div class="tagline-pill">
-            <i class="fa-solid fa-circle-dot"></i> Gujarat's #1 Stock Market Channel
+    <div class="card">
+        <!-- Logo -->
+        <div class="logo-circle">
+            <div class="logo-inner">LC</div>
         </div>
 
-        <h1>ગુજરાતી <span>TRADER</span></h1>
-        <h2>શીખો શેર બજાર ગુજરાતીમાં</h2>
+        <!-- Header -->
+        <h1>Apply Now & Get Money</h1>
+        <p class="subtitle">Just 3 simple steps to approve your amount.</p>
 
-        <p>Stock Market ની દરેક વાત હવે સરળ ગુજરાતીમાં.<br>Free Telegram Channel Join કરો અને શીખો!</p>
-        <p><strong>Trading, Investing & Chart Analysis</strong></p>
-
-        <div class="container">
-            <a href="https://t.me/+G2W6mxUddD4zYjVl" class="btn-telegram">
-                <i class="fa-brands fa-telegram"></i> Telegram Channel Join કરો - FREE
-            </a>
-        </div>
-    </section>
-
-    <div class="container">
-        <!-- Stats Section -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>50,000+</h3>
-                <p>Active Members</p>
-            </div>
-            <div class="stat-card">
-                <h3>500+</h3>
-                <p>Videos & Posts</p>
-            </div>
-            <div class="stat-card">
-                <h3>3+</h3>
-                <p>Years Experience</p>
-            </div>
-            <div class="stat-card">
-                <h3>95%</h3>
-                <p>Accuracy Rate</p>
-            </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="feature-card">
-            <div class="feature-icon icon-green">
-                <i class="fa-solid fa-chart-line"></i>
-            </div>
-            <h3>Live Market Analysis</h3>
-            <p>Real-time stock tips ગુજરાતીમાં</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon icon-blue">
-                <i class="fa-solid fa-book-open"></i>
-            </div>
-            <h3>Basic to Advanced</h3>
-            <p>Beginner થી Expert સુધીની journey</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon icon-red">
-                <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <h3>Risk Management</h3>
-            <p>Loss minimize કરવાની strategies</p>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon icon-purple">
-                <i class="fa-solid fa-bolt"></i>
-            </div>
-            <h3>Quick Alerts</h3>
-            <p>Entry/Exit point instant notification</p>
-        </div>
-
-        <!-- Testimonial Section -->
-        <div class="testimonials">
-            <div class="section-title-sub">TESTIMONIALS</div>
-            <div class="section-title">Members શું કહે છે?</div>
-
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <div class="testimonial-text">
-                    "Free group માં આટલું valuable content! Gujrati Trader best hai!"
+        <!-- Steps -->
+        <div class="steps-list">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Download App</h3>
+                    <p>Get the official Low Credit app from the link below</p>
                 </div>
-                <div class="author-name">Hetal Modi</div>
-                <div class="author-location">Rajkot</div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Quick Registration</h3>
+                    <p>Create account & complete basic KYC</p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Receive Amount</h3>
+                    <p>Get money directly in your bank account</p>
+                </div>
             </div>
         </div>
 
-        <!-- Call to action footer area -->
-        <div style="text-align: center; margin: 30px 0;">
-            <h2>આજે જ Join કરો!</h2>
-            <p style="color: #a0aec0; margin-top: 5px;">50,000+ traders already learning with us.</p>
-            <h3 style="color: #00e676; margin-top: 10px;">Bilkul FREE — No Hidden Charges!</h3>
-            
-            <a href="https://t.me/+G2W6mxUddD4zYjVl" class="btn-telegram">
-                <i class="fa-brands fa-telegram"></i> Telegram Group Join કરો — FREE
-            </a>
-        </div>
+        <!-- Button -->
+        <a href="#" class="btn-download">Download App Now</a>
 
-        <div class="disclaimer">
-            By joining, you agree to our Terms. This is an educational channel.
+        <!-- Footer -->
+        <div class="footer-text">
+            <div class="security-info">
+                🔒 100% Secure Download
+            </div>
+            <span>Click to download and start your application</span>
         </div>
     </div>
-
-    <!-- Fixed Bottom Sticky Button -->
-    <div class="fixed-bottom">
-        <a href="https://t.me/+G2W6mxUddD4zYjVl" class="btn-telegram">
-            <i class="fa-brands fa-telegram"></i> Join FREE Telegram
-        </a>
-    </div>
-
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -448,11 +205,11 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1780764782961960');
+fbq('init', '27916291138004151');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1780764782961960&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=27916291138004151&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 </body>
