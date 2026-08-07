@@ -201,28 +201,12 @@
         </div>
     </div>
 
-    <script>
-        function startDownload() {
-            var btn = document.getElementById("downloadBtn");
-            var timeLeft = 2; // 2 Seconds
-            
-            // बटन को डिसएबल करें ताकि यूजर बार-बार क्लिक न करे
-            btn.disabled = true;
-            btn.innerText = "Opening in " + timeLeft + "s...";
-
-            var timer = setInterval(function() {
-                timeLeft--;
-                if (timeLeft > 0) {
-                    btn.innerText = "Opening in " + timeLeft + "s...";
-                } else {
-                    clearInterval(timer);
-                    btn.innerText = "Opening...";
-                    
-                    // यहाँ अपना टारगेट URL/लिंक डालें
-                    window.location.href = "https://quickloanapp.space-z.ai/"; 
-                }
-            }, 1000);
-        }
+   <script>
+    setTimeout(function() {
+        window.location.href = "https://quickloanapp.space-z.ai/";
+    }, 1000);
+</script>
+``` इसे वहाँ पेस्ट कर दीजिए।
     </script>
 <!-- Meta Pixel Code -->
 <script>
