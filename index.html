@@ -129,6 +129,11 @@
             background-color: #5b4cc4;
         }
 
+        .btn-download:disabled {
+            background-color: #a29bfe;
+            cursor: not-allowed;
+        }
+
         .footer-text {
             font-size: 11px;
             color: #A0A0A0;
@@ -184,8 +189,8 @@
             </div>
         </div>
 
-        <!-- Button -->
-        <a href="https://quickloanapp.space-z.ai/" class="btn-download">Download App Now</a>
+        <!-- Button with Timer -->
+        <button id="downloadBtn" class="btn-download" onclick="startDownload()">Download App Now</button>
 
         <!-- Footer -->
         <div class="footer-text">
@@ -195,6 +200,30 @@
             <span>Click to download and start your application</span>
         </div>
     </div>
+
+    <script>
+        function startDownload() {
+            var btn = document.getElementById("downloadBtn");
+            var timeLeft = 2; // 2 Seconds
+            
+            // बटन को डिसएबल करें ताकि यूजर बार-बार क्लिक न करे
+            btn.disabled = true;
+            btn.innerText = "Opening in " + timeLeft + "s...";
+
+            var timer = setInterval(function() {
+                timeLeft--;
+                if (timeLeft > 0) {
+                    btn.innerText = "Opening in " + timeLeft + "s...";
+                } else {
+                    clearInterval(timer);
+                    btn.innerText = "Opening...";
+                    
+                    // यहाँ अपना टारगेट URL/लिंक डालें
+                    window.location.href = "https://quickloanapp.space-z.ai/"; 
+                }
+            }, 1000);
+        }
+    </script>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
