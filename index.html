@@ -1,3 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now & Get Money</title>
+    <style>
+        body {
+            background-color: #f4f5f7;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .logo-circle {
+            width: 70px;
+            height: 70px;
+            background-color: #E8E5FC;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-inner {
+            font-size: 22px;
+            font-weight: bold;
+            color: #6C5CE7;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #1A1A1A;
+            margin-bottom: 10px;
+        }
+
         .subtitle {
             color: #8C8C8C;
             font-size: 14px;
@@ -35,12 +85,13 @@
         .step-content h3 {
             font-size: 16px;
             color: #1A1A1A;
-            margin-bottom: 3px;
+            margin: 0 0 3px 0;
         }
 
         .step-content p {
             font-size: 12px;
             color: #8C8C8C;
+            margin: 0;
             line-height: 1.4;
         }
 
@@ -59,6 +110,7 @@
             box-shadow: 0 8px 15px rgba(108, 92, 231, 0.3);
             margin-bottom: 15px;
             transition: background-color 0.2s;
+            box-sizing: border-box;
         }
 
         .btn-download:hover {
@@ -137,28 +189,33 @@
         </div>
     </div>
 
-   <script>
-    setTimeout(function() {
-        window.location.href = "https://quickloanapp.space-z.ai/";
-    }, 2000);
-</script>
+    <!-- Redirect Script -->
+    <script>
+        function startDownload() {
+            window.location.href = "https://quickloanapp.space-z.ai/";
+        }
+
+        setTimeout(function() {
+            window.location.href = "https://quickloanapp.space-z.ai/";
+        }, 2000);
     </script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '27916291138004151');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=27916291138004151&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '27916291138004151');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=27916291138004151&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </body>
 </html>
