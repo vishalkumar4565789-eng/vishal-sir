@@ -1,266 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trending with MUNAAF</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3MP®️_ SAFE INFO (MINISHPATAL SEBI REGISTERED)</title>
+    <style>
+        body {
+            background-color: #0d1b2a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #1b263b;
+            border-radius: 15px;
+            padding: 30px 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #ffcc00;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: #ffcc00;
+            font-size: 24px;
+            margin: 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            color: #a0aec0;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        
+        /* Signal Button Style */
+        .btn {
+            display: block;
+            background-color: #22c55e;
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #16a34a;
+        }
+        
+        /* Signal Loading State */
+        .btn.loading {
+            background-color: #eab308 !important;
+            color: #000000;
+            animation: pulse 1s infinite alternate;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#050816;
-color:#fff;
-overflow-x:hidden;
-}
-
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:40px 8%;
-position:relative;
-background:
-radial-gradient(circle at top right,#00ff9d20,transparent 35%),
-radial-gradient(circle at bottom left,#3b82f620,transparent 35%),
-#050816;
-}
-
-.hero::before{
-content:'';
-position:absolute;
-width:350px;
-height:350px;
-background:#00ff9d;
-filter:blur(180px);
-opacity:.15;
-top:-80px;
-right:-100px;
-}
-
-.hero-content{
-max-width:1200px;
-width:100%;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.badge{
-display:inline-block;
-padding:10px 18px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.1);
-backdrop-filter:blur(10px);
-border-radius:50px;
-font-size:14px;
-color:#00ff9d;
-margin-bottom:25px;
-}
-
-h1{
-font-size:64px;
-line-height:1.1;
-margin-bottom:20px;
-}
-
-.highlight{
-background:linear-gradient(90deg,#00ff9d,#38bdf8);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.hero p{
-font-size:18px;
-line-height:1.8;
-color:#b5bfd1;
-margin-bottom:30px;
-}
-
-.buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:16px 30px;
-border-radius:12px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-.primary{
-background:linear-gradient(90deg,#00ff9d,#00d084);
-color:#000;
-}
-
-.secondary{
-border:1px solid rgba(255,255,255,.15);
-background:rgba(255,255,255,.05);
-color:#fff;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-}
-
-.stats{
-display:flex;
-gap:30px;
-margin-top:40px;
-flex-wrap:wrap;
-}
-
-.stat h2{
-color:#00ff9d;
-font-size:32px;
-}
-
-.stat p{
-margin-top:5px;
-font-size:14px;
-color:#a5afc1;
-}
-
-.card{
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.08);
-padding:30px;
-border-radius:25px;
-box-shadow:0 0 30px rgba(0,255,157,.08);
-}
-
-.card h3{
-margin-bottom:20px;
-color:#00ff9d;
-}
-
-.list{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.list div{
-padding:15px;
-background:rgba(255,255,255,.04);
-border-radius:12px;
-}
-
-.live{
-margin-top:25px;
-padding:18px;
-background:linear-gradient(90deg,#00ff9d20,#38bdf820);
-border-radius:15px;
-border:1px solid rgba(255,255,255,.08);
-}
-
-@media(max-width:900px){
-.hero-content{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.buttons{
-justify-content:center;
-}
-
-.stats{
-justify-content:center;
-}
-
-h1{
-font-size:42px;
-}
-}
-</style>
+        .badge-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        .features-list {
+            text-align: left;
+            margin: 20px 0;
+            padding: 0 10px;
+            list-style: none;
+        }
+        .features-list li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .features-list li::before {
+            content: "✓";
+            color: #ffffff;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .notice {
+            color: #ffcc00;
+            font-size: 14px;
+            margin: 15px 0 5px 0;
+        }
+        .sub-text {
+            color: #a0aec0;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .risk-disclaimer {
+            color: #718096;
+            font-size: 11px;
+            margin-top: 15px;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #718096;
+        }
+        footer a {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
+<div class="container">
+    <!-- Profile Image -->
+    <img src="https://i.ibb.co/hRys29pF/jm1yt-UH0-T-k8-St1-Q5wy-FEf-Asv-Avcsp9-Al-LWGT0f-Rkltrxj5-Cq7r-WPf-L712b-Ba-Bw4-ZEAYY5yi-WQZAPSqvx5-Sr6am-X.jpg" alt="Pankaj Bhardwaj" class="profile-img">
 
-<div class="hero-content">
+    <h1>3MP®️_ SAFE INFO (MINISHPATAL SEBI REGISTERED)</h1>
+    <div class="subtitle">NIFTY • BANKNIFTY • OPTIONS</div>
+    <div class="tagline">Daily Intraday Trading Signals & Analysis</div>
 
-<div>
+    <!-- Single Telegram Button with Signal Effect -->
+    <button class="btn" onclick="connectSignal(this, 'https://t.me/+n330E-yZXjRiYjY1')">Join Now For Free Telegram</button>
 
-<div class="badge">
-🚀 India's Fast Growing Trading Community
+    <!-- Trusted Badge -->
+    <div class="badge-box">
+        <div>✓ Trusted by 5,000+ Traders</div>
+        <div style="margin-top: 5px;">✓ Daily Consistent Setups</div>
+    </div>
+
+    <!-- Features List -->
+    <ul class="features-list">
+        <li>5-7 High Probability Trades</li>
+        <li>Exact Entry, SL & Target</li>
+        <li>Beginner Friendly Guidance</li>
+        <li>Live Market Updates</li>
+    </ul>
+
+    <div class="notice">⏳ Free Access Closing Soon</div>
+    <div class="sub-text">📊 Limited Seats • Active Community</div>
+    <div class="risk-disclaimer">⚠️ Market investments are subject to risk</div>
+
+    <!-- Footer Section with 'AI ADS AGENCY' -->
+    <footer>
+        Powered by <a href="https://t.me/+mqNI-rk7y284M2Fl">AI ADS AGENCY</a>
+    </footer>
 </div>
 
-<h1>
-Trade Smarter With
-<span class="highlight">MUNAAF</span>
-</h1>
+<script>
+    // Signal Check Function
+    function connectSignal(button, url) {
+        button.innerText = "📡 CONNECTING SIGNAL...";
+        button.classList.add('loading');
+        button.disabled = true;
 
-<p>
-Get daily stock market insights, trending stocks, breakout opportunities,
-swing trading ideas, intraday setups and risk management strategies
-from experienced traders.
-</p>
-
-<div class="buttons">
-<a href="https://t.me/+guLvlUgEjtNmZTQ1" class="btn primary">
-Join Telegram
-</a>
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<h2>10K+</h2>
-<p>Active Traders</p>
-</div>
-
-<div class="stat">
-<h2>500+</h2>
-<p>Market Updates</p>
-</div>
-
-<div class="stat">
-<h2>95%</h2>
-<p>Community Satisfaction</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>📈 What You'll Get</h3>
-
-<div class="list">
-<div>🔥 Trending Stocks Daily</div>
-<div>📊 Technical Analysis</div>
-<div>💰 Swing Trading Ideas</div>
-<div>⚡ Intraday Setups</div>
-<div>🛡️ Risk Management</div>
-<div>🎯 Trading Psychology</div>
-</div>
-
-<div class="live">
-<b>LIVE MARKET EDGE</b><br>
-Daily actionable insights delivered directly to our community.
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+        setTimeout(function() {
+            button.innerText = "✅ SIGNAL CONNECTED!";
+            window.location.href = url;
+            
+            setTimeout(function() {
+                button.innerText = "Join Now For Free Telegram";
+                button.classList.remove('loading');
+                button.disabled = false;
+            }, 2000);
+            
+        }, 1500); 
+    }
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1534165164637572');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1534165164637572&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </body>
 </html>
